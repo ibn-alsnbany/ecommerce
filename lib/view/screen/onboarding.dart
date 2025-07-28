@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class OnBoarding extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 90),
-                  Image.asset(onboardinglist[i].image!),
+                  Image.asset(onboardinglist[i].image!, width: 200, height: 250,fit: BoxFit.fill,),
                   SizedBox(height: 90),
                   Container(
                     width: double.infinity,
@@ -29,7 +30,7 @@ class OnBoarding extends StatelessWidget {
                     child: Text(
                       onboardinglist[i].body!,
                       textAlign: TextAlign.center,
-                      style: TextStyle(height: 3),
+                      style: TextStyle(height: 3, color: AppColor.grey, fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                   ),
                 ],
