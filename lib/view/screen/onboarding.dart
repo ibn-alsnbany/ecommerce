@@ -11,42 +11,86 @@ class OnBoarding extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            PageView.builder(
-              itemCount: onboardinglist.length,
-              itemBuilder:
-                  (context, i) => Column(
-                    children: [
-                      Text(
-                        onboardinglist[i].title!,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                      SizedBox(height: 90),
-                      Image.asset(
-                        onboardinglist[i].image!,
-                        width: 200,
-                        height: 250,
-                        fit: BoxFit.fill,
-                      ),
-                      SizedBox(height: 90),
-                      Container(
-                        width: double.infinity,
-                        alignment: Alignment.center,
-                        child: Text(
-                          onboardinglist[i].body!,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            height: 3,
-                            color: AppColor.grey,
+            Expanded(
+              flex: 3,
+              child: PageView.builder(
+                itemCount: onboardinglist.length,
+                itemBuilder:
+                    (context, i) => Column(
+                      children: [
+                        Text(
+                          onboardinglist[i].title!,
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
+                          ),
+                        ),
+                        SizedBox(height: 70),
+                        Image.asset(
+                          onboardinglist[i].image!,
+                          width: 200,
+                          height: 220,
+                          fit: BoxFit.fill,
+                        ),
+                        SizedBox(height: 70),
+                        Container(
+                          width: double.infinity,
+                          alignment: Alignment.center,
+                          child: Text(
+                            onboardinglist[i].body!,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              height: 2.3,
+                              color: AppColor.grey,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+              ),
+            ),
+
+            Expanded(
+              flex: 1,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ...List.generate(
+                        onboardinglist.length,
+                        (index) => AnimatedContainer(
+                          margin: const EdgeInsets.only(right: 5),
+                          duration: const Duration(milliseconds: 900),
+                          width: 5,
+                          height: 6,
+                          decoration: BoxDecoration(
+                            color: AppColor.primaryColor,
+                            borderRadius: BorderRadius.circular(10),
                           ),
                         ),
                       ),
                     ],
                   ),
+                  Spacer(flex: 2),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 35),
+                    height: 40,
+                    child: MaterialButton(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 100,
+                        vertical: 0,
+                      ),
+                      textColor: Colors.white,
+                      onPressed: () {},
+                      color: AppColor.primaryColor,
+                      child: const Text('Continue'),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
