@@ -9,32 +9,46 @@ class OnBoarding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: PageView.builder(
-          itemCount: onboardinglist.length,
-          itemBuilder:
-              (context, i) => Column(
-                children: [
-                  Text(
-                    onboardinglist[i].title!,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+        child: Column(
+          children: [
+            PageView.builder(
+              itemCount: onboardinglist.length,
+              itemBuilder:
+                  (context, i) => Column(
+                    children: [
+                      Text(
+                        onboardinglist[i].title!,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(height: 90),
+                      Image.asset(
+                        onboardinglist[i].image!,
+                        width: 200,
+                        height: 250,
+                        fit: BoxFit.fill,
+                      ),
+                      SizedBox(height: 90),
+                      Container(
+                        width: double.infinity,
+                        alignment: Alignment.center,
+                        child: Text(
+                          onboardinglist[i].body!,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            height: 3,
+                            color: AppColor.grey,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 90),
-                  Image.asset(onboardinglist[i].image!, width: 200, height: 250,fit: BoxFit.fill,),
-                  SizedBox(height: 90),
-                  Container(
-                    width: double.infinity,
-                    alignment: Alignment.center,
-                    child: Text(
-                      onboardinglist[i].body!,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(height: 3, color: AppColor.grey, fontWeight: FontWeight.bold, fontSize: 20),
-                    ),
-                  ),
-                ],
-              ),
+            ),
+          ],
         ),
       ),
     );
