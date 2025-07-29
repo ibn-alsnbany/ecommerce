@@ -20,10 +20,7 @@ class Customslider extends GetView<OnboardingControllerImp> {
             children: [
               Text(
                 onboardinglist[i].title!,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
               SizedBox(height: 70),
               Image.asset(
@@ -39,12 +36,7 @@ class Customslider extends GetView<OnboardingControllerImp> {
                 child: Text(
                   onboardinglist[i].body!,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    height: 2.3,
-                    color: AppColor.grey,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
             ],
