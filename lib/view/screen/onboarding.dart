@@ -12,7 +12,7 @@ class OnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(OnboardingControllerImp());
+    Get.put(OnboardingControllerImp()); // حقن للاونبوردينج كونترولر امب
     return Scaffold(
       body: SafeArea(
         child: Column(
