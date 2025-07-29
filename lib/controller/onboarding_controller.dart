@@ -1,3 +1,4 @@
+import 'package:ecommerce/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,6 +15,10 @@ class OnboardingControllerImp extends OnboardingController {
   @override
   next() {
     currentPage++;
+
+    if (currentPage > onboardinglist.length - 1) {
+      print('Page4');
+    } else {}
     pageController.animateToPage(
       currentPage,
       duration: Duration(milliseconds: 900),
