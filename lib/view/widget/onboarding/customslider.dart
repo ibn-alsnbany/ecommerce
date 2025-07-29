@@ -10,6 +10,7 @@ class Customslider extends GetView<OnboardingControllerImp> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
+      controller: controller.pageController,
       onPageChanged: (val) {
         controller.onPageChange(val);
       },

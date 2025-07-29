@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class OnboardingController extends GetxController {
@@ -6,14 +7,29 @@ abstract class OnboardingController extends GetxController {
 }
 
 class OnboardingControllerImp extends OnboardingController {
+  late PageController pageController;
+
   int currentPage = 0;
 
   @override
-  next() {}
+  next() {
+    currentPage++;
+    pageController.animateToPage(
+      currentPage,
+      duration: Duration(milliseconds: 900),
+      curve: Curves.easeInOut,
+    );
+  }
 
   @override
   onPageChange(int index) {
     currentPage = index;
     update();
+  }
+
+  @override
+  void onInit() {
+    pageController = PageController();
+    super.onInit();
   }
 }
