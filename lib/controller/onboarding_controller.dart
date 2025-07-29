@@ -6,9 +6,14 @@ abstract class OnboardingController extends GetxController {
 }
 
 class OnboardingControllerImp extends OnboardingController {
+  int currentPage = 0;
+
   @override
   next() {}
 
   @override
-  onPageChange(int index) {}
+  onPageChange(int index) {
+    currentPage = index;
+    update();
+  }
 }

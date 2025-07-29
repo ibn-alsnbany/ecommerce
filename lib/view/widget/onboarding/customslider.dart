@@ -9,12 +9,10 @@ class Customslider extends GetView<OnboardingControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    onPageChange:
-    (val) {
-      print(val);
-      print('object');
-    };
     return PageView.builder(
+      onPageChanged: (val) {
+        controller.onPageChange(val);
+      },
       itemCount: onboardinglist.length,
       itemBuilder:
           (context, i) => Column(
