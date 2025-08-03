@@ -3,6 +3,7 @@ import 'package:ecommerce/core/localization/transilation.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/routes.dart';
 import 'package:ecommerce/view/screen/OnBoarding.dart';
+import 'package:ecommerce/view/screen/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const OnBoarding(),
+      home: const Language(),
       routes: routes,
     );
   }
