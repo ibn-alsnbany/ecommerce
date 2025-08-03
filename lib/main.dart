@@ -1,4 +1,5 @@
 import 'package:ecommerce/core/constant/color.dart';
+import 'package:ecommerce/core/localization/changelocal.dart';
 import 'package:ecommerce/core/localization/transilation.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/routes.dart';
@@ -18,11 +19,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LocaleControllar controllar = Get.put(LocaleControllar());
+
     return GetMaterialApp(
       translations: MyTransilation(),
 
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      locale: controllar.language,
       theme: ThemeData(
         textTheme: TextTheme(
           headlineSmall: const TextStyle(
