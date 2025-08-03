@@ -11,7 +11,12 @@ class Login extends StatelessWidget {
         centerTitle: true,
         backgroundColor: AppColor.backgroundColor,
         elevation: 0.0,
-        title: Text('Title', style: TextStyle(fontSize: 20)),
+        title: Text(
+          'Sign in',
+          style: Theme.of(
+            context,
+          ).textTheme.headlineSmall!.copyWith(color: AppColor.grey),
+        ),
       ),
       body: Container(child: Text('Login')),
     );
