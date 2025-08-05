@@ -18,7 +18,13 @@ class Login extends StatelessWidget {
           ).textTheme.headlineSmall!.copyWith(color: AppColor.grey),
         ),
       ),
-      body: Container(child: Text('Login')),
+      body: Container(
+        padding: EdgeInsets.all(15),
+        child: ListView(children: [
+            
+          ],
+        ),
+      ),
     );
   }
 }
